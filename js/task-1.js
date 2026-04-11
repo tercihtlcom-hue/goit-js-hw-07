@@ -1,9 +1,10 @@
-{
-  const input = document.querySelector("#name-input");
-  const output = document.querySelector("#name-output");
+const categories = document.querySelectorAll("#categories .item");
+console.log(`Number of categories: ${categories.length}`);
 
-  input.addEventListener("input", () => {
-    const value = input.value.trim();
-    output.textContent = value === "" ? "Anonymous" : value;
-  });
-}
+categories.forEach(item => {
+  const title = item.querySelector("h2").textContent;
+  const elementsCount = item.querySelectorAll("ul li").length;
+  console.log(`Category: ${title}`);
+  console.log(`Elements: ${elementsCount}`);
+});
+
